@@ -1,6 +1,6 @@
 # OpenCode-Unlimited
 
-Fixes OpenCode's daily free-message limit from the command line: shows the real meter, clears the stale limit banner, rotates a local device id, and moves you onto a fresh network exit when you ask it to. Windows 10/11.
+Fixes OpenCode's daily free-message limit from the command line: shows the real meter, clears the stale limit banner, rotates a local device id, and moves you onto a fresh network exit when you ask it to. Suports Windows 10/11 & Linux.
 
 Nothing here writes to your registry, deletes a chat, or loses a message.
 
@@ -50,7 +50,7 @@ Step by step:
 3. **Run the reset.**
 
    ```powershell
-   opencode-unlimited reset "C:\my\project"
+   opencode-unlimited reset "~/my/project"
    ```
 
    That rotates the local device id, removes the stored limit errors, re-ids the sessions in that folder without touching their messages, and switches to the next proxy in your pool if you added one. It also prints the egress address before and after, so you can see whether the IP really moved.
@@ -215,3 +215,4 @@ Educational and research use only. Not affiliated with, endorsed by, or supporte
 - Using it may break a provider's terms of service. That is your responsibility, and so is any consequence, including account restrictions.
 - Provided "as is", with no warranty and no liability for damage, data loss or account action. Use at your own risk.
 - Rights holder and want it gone? Open an issue and it gets removed promptly, no argument.
+
