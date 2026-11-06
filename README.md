@@ -8,7 +8,7 @@ Nothing here writes to your registry, deletes a chat, or loses a message.
 
 ```powershell
 opencode-unlimited usage
-opencode-unlimited reset "C:\my\project"
+opencode-unlimited reset "~/my/project"
 ```
 
 ---
@@ -106,13 +106,13 @@ Inside the chat, the same actions as slash commands:
 
 ```
 opencode-unlimited
-opencode-unlimited:reset C:\Users\you\projects\my-app
+opencode-unlimited:reset ~/you/projects/my-app
 opencode-unlimited:identity rotate
 opencode-unlimited:block
 opencode-unlimited:usage
-opencode-unlimited:reid C:\Users\you\projects\my-app
+opencode-unlimited:reid ~/you/projects/my-app
 opencode-unlimited:model openrouter/deepseek/deepseek-v4.1-flash
-opencode-unlimited:clear C:\Users\you\projects\my-app
+opencode-unlimited:clear ~/you/projects/my-app
 ```
 
 Colon separator, so they sort together and do not collide with other plugins.
