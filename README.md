@@ -1,6 +1,8 @@
 # OpenCode-Unlimited
 
-Fixes OpenCode's daily free-message limit from the command line: shows the real meter, clears the stale limit banner, rotates a local device id, and moves you onto a fresh network exit when you ask it to. Suports Windows 10/11 & Linux.
+Fixes OpenCode's daily free-message limit from the command line: shows the real meter, clears the stale limit banner, rotates a local device id, and moves you onto a fresh network exit when you ask it to.
+
+Supports Windows 10/11 & Linux.
 
 Nothing here writes to your registry, deletes a chat, or loses a message.
 
