@@ -43,12 +43,17 @@ You've used today's free messages. They reset at 2:00 AM - 10/27/2026
 Step by step:
 
 1. **Close OpenCode.** The desktop app, the TUI, and `opencode serve` if it is running. Anything still open keeps the old connection warm.
-2. **Change your IP.** Pick one:
-   - Disconnect and reconnect your VPN, and pick a different server.
-   - Turn your phone hotspot on and connect to it.
-   - Power-cycle your router until the ISP hands you a new address.
-
+   
+2. **Install/Setup WARP.**
+```bash
+sudo apt update && sudo apt install -y curl gpg lsb-release apt-transport-https \
+    curl -fsSL https://pkg.cloudflareclient.com/pubkey.gpg | sudo gpg --yes --dearmor --output /usr/share/keyrings/cloudflare-warp-archive-keyring.gpg \
+    echo "deb [signed-by=/usr/share/keyrings/cloudflare-warp-archive-keyring.gpg] https://pkg.cloudflareclient.com/ $(lsb_release -cs) main" | sudo tee /etc/apt/sources.list.d/cloudflare-client.list \
+    sudo apt update && sudo apt install -y cloudflare-warp \
+    warp-cli registration new && warp-cli connect && warp-cli status
+```
    Check that it actually changed with `opencode-unlimited block` — it prints the address you are leaving from right now.
+   
 3. **Run the reset.**
 
    ```powershell
@@ -56,6 +61,7 @@ Step by step:
    ```
 
    That rotates the local device id, removes the stored limit errors, re-ids the sessions in that folder without touching their messages, and switches to the next proxy in your pool if you added one. It also prints the egress address before and after, so you can see whether the IP really moved.
+
 4. **Open OpenCode again.** The banner is gone and you are on the new block.
 
 If step 3 says `ip unchanged`, step 2 did not work. Same address means same bucket, and that bucket stays spent until 00:00 UTC. Change the connection again, then re-run `reset`.
