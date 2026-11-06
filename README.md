@@ -14,9 +14,9 @@ opencode-unlimited reset "C:\my\project"
 ## Install
 
 ```powershell
-git clone https://github.com/Tazmyan/OpenCode-Unlimited.git
+git clone https://github.com/1ndevelopment/OpenCode-Unlimited
 cd OpenCode-Unlimited
-powershell -ExecutionPolicy Bypass -File .\install.ps1
+sudo ./install.sh
 ```
 
 Open a new terminal afterwards so `opencode-unlimited` is on PATH.
