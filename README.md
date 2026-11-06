@@ -46,11 +46,11 @@ Step by step:
    
 2. **Install/Setup WARP.**
 ```bash
-sudo apt update && sudo apt install -y curl gpg lsb-release apt-transport-https \
-    curl -fsSL https://pkg.cloudflareclient.com/pubkey.gpg | sudo gpg --yes --dearmor --output /usr/share/keyrings/cloudflare-warp-archive-keyring.gpg \
-    echo "deb [signed-by=/usr/share/keyrings/cloudflare-warp-archive-keyring.gpg] https://pkg.cloudflareclient.com/ $(lsb_release -cs) main" | sudo tee /etc/apt/sources.list.d/cloudflare-client.list \
-    sudo apt update && sudo apt install -y cloudflare-warp \
-    warp-cli registration new && warp-cli connect && warp-cli status
+sudo apt update && sudo apt install -y curl gpg lsb-release apt-transport-https
+curl -fsSL https://pkg.cloudflareclient.com/pubkey.gpg | sudo gpg --yes --dearmor --output /usr/share/keyrings/cloudflare-warp-archive-keyring.gpg
+echo "deb [signed-by=/usr/share/keyrings/cloudflare-warp-archive-keyring.gpg] https://pkg.cloudflareclient.com/ $(lsb_release -cs) main" | sudo tee /etc/apt/sources.list.d/cloudflare-client.list
+sudo apt update && sudo apt install -y cloudflare-warp
+warp-cli registration new && warp-cli connect && warp-cli status
 ```
    Check that it actually changed with `opencode-unlimited block` — it prints the address you are leaving from right now.
    
